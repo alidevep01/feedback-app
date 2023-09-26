@@ -5,7 +5,6 @@ function App() {
     <>
       {/* <h1>Hello from the App component</h1> */}
       <div className="container"></div>
-      <Header text="hello" />
       <Header />
     </>
   );
