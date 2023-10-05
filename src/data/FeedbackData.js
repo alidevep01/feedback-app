@@ -12,7 +12,7 @@ const FeedbackData = [
   {
     text: "Updated all packages to latest",
     rating: 6,
-    id: 4,
+    id: 3,
   },
 ];
 
