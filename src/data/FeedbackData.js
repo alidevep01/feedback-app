@@ -6,12 +6,12 @@ const FeedbackData = [
   },
   {
     id: 2,
-    rating: 8,
+    rating: 9,
     text: "This is feedback item 2 coming from the backend",
   },
   {
     text: "Updated all packages to latest",
-    rating: 6,
+    rating: 8,
     id: 3,
   },
 ];
