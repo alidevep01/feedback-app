@@ -14,14 +14,15 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       <Header />
-      <FeedbackForm />
-      <FeedbackStats feedback={feedback} />
+
       <div className="container">
+        <FeedbackForm />
+        <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
-    </>
+    </div>
   );
 }
 
