@@ -7,6 +7,8 @@ import { useState } from "react";
 import FeedbackForm from "./components/FeedbackForm";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutPage from "./components/Pages/AboutPage";
+import { Link } from "react-router-dom";
+import AboutIconLink from "./components/AboutIconLink";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -25,7 +27,10 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
+        <Link style={{ textDecoration: "none" }} to="/">
+          <Header />
+        </Link>
+
         <div className="container">
           <Routes>
             <Route
@@ -45,6 +50,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </div>
+        <AboutIconLink />
       </Router>
     </div>
   );

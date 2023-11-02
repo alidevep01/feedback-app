@@ -1,4 +1,6 @@
 import Card from "../shared/Card";
+import { Link } from "react-router-dom";
+import { FaBackward } from "react-icons/fa";
 
 function AboutPage() {
   return (
@@ -7,7 +9,10 @@ function AboutPage() {
         <h1>This is an about page</h1>
         <p>Version 1.0</p>
         <p>
-          <a href="/">Go back to home Page</a>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <FaBackward style={{ color: " #ff6a95" }} beat /> Go back to home
+            Page
+          </Link>
         </p>
       </div>
     </Card>
