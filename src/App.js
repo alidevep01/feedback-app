@@ -14,7 +14,7 @@ function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
   const addFeedback = (newFeedback) => {
-    newFeedback.id = +uuidv4();
+    newFeedback.id = uuidv4();
     setFeedback([newFeedback, ...feedback]);
   };
 

@@ -22,7 +22,7 @@ function FeedbackList({ feedback, handleDelete }) {
               handleDelete={handleDelete}
             />
           </motion.div>
-        ))}{" "}
+        ))}
       </AnimatePresence>
     </div>
   );
