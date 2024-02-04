@@ -32,21 +32,22 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
 
-   ```bash
+   ```
    git clone https://github.com/your-username/feedback-app.git
    cd feedback-app
-Install dependencies:
+   ```
+2. Install dependencies:
 
-bash
-Copy code
+   ```
 npm install
-Start the development server:
 
-bash
-Copy code
+   ```
+3. Start the development server:
+   ```
 npm start
-Open your browser and visit http://localhost:3000 to see the app in action.
 
+   ```
+Open your browser and visit http://localhost:3000 to see the app in action.
 ## Project Structure
 The project structure is organized as follows:
 
@@ -64,4 +65,4 @@ src/
 - PropTypes
 - UUID (v4)
 - contextAPI
-- es6--.map, reduce, ternary operator
+- es6 -> map, reduce, ternary operator
