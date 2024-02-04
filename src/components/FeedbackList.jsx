@@ -2,7 +2,6 @@ import FeedbackItem from "./FeedbackItem";
 import { motion, AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import FeedbackContext from "../Context/FeedbackContext";
-import { type } from "os";
 
 function FeedbackList() {
   const { feedback } = useContext(FeedbackContext);
