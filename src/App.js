@@ -1,13 +1,14 @@
 import { v4 as uuidv4 } from "uuid";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+// -----------> Components <--------------//
 import Header from "./components/Header";
 import FeedbackData from "./data/FeedbackData";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
-import { useState } from "react";
 import FeedbackForm from "./components/FeedbackForm";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutPage from "./components/Pages/AboutPage";
-import { Link } from "react-router-dom";
 import AboutIconLink from "./components/AboutIconLink";
 
 function App() {
@@ -44,13 +45,13 @@ function App() {
                     feedback={feedback}
                     handleDelete={deleteFeedback}
                   />
+                  <AboutIconLink />
                 </>
               }
             />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </div>
-        <AboutIconLink />
       </Router>
     </div>
   );
