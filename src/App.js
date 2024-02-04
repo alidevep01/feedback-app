@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { FeedbackProvider } from "./Context/FeedbackContext";
 // -----------> Components <--------------//
 import Header from "./components/Header";
