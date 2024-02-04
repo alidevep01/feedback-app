@@ -38,16 +38,17 @@ To run this project locally, follow these steps:
    ```
 2. Install dependencies:
 
-   ```
-npm install
+```
+ npm install
+```
+ 3. Start the development server:
 
-   ```
-3. Start the development server:
    ```
 npm start
-
    ```
 Open your browser and visit http://localhost:3000 to see the app in action.
+
+
 ## Project Structure
 The project structure is organized as follows:
 
