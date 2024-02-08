@@ -3,61 +3,42 @@ import { createContext, useState, useEffect } from "react";
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const [feedback, setFeedback] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [feedback, setFeedback] = useState([
+    {
+      id: "d65c",
+      text: "this is feedback with rating 5",
+      rating: 5,
+    },
+    {
+      text: "this is feedback with rating 8",
+      rating: 8,
+      id: "bb4f",
+    },
+    {
+      text: "44444444444444444444444",
+      rating: 4,
+      id: "e28b",
+    },
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
   const [feedbackEdit, setFeedbackEdit] = useState({
     item: {},
     edit: false,
   });
 
-  useEffect(() => {
-    fetchFeedback();
-  }, []);
-
-  // fetch data
-  const fetchFeedback = async () => {
-    try {
-      const response = await fetch("/feedback");
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      setFeedback(data);
-      setIsLoading(false);
-    } catch (error) {
-      console.error("Error fetching data:", error.message);
-    }
-  };
-
-  //Delete Feedback
-  const deleteFeedback = async (id) => {
-    if (window.confirm("Are you sure you want to delete?")) {
-      await fetch(`/feedback/${id}`, {
-        method: "DELETE",
-      });
-
+  // Delete Feedback
+  const deleteFeedback = (id) => {
+    if (window.confirm("Are you sure you want to delete")) {
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
 
-  //Add Feedback
-  const addFeedback = async (newFeedback) => {
-    const response = await fetch(
-      "/feedback/",
-
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newFeedback),
-      }
-    );
-    const data = await response.json();
-    setFeedback([data, ...feedback]);
+  // Add Feedback
+  const addFeedback = (newFeedback) => {
+    setFeedback([newFeedback, ...feedback]);
   };
 
-  //Edit Feedback
+  // Edit Feedback
   const editFeedback = (item) => {
     setFeedbackEdit({
       item,
@@ -65,21 +46,19 @@ export const FeedbackProvider = ({ children }) => {
     });
   };
 
-  //update Feedback
-  const updateFeedback = async (id, updItem) => {
-    const response = await fetch(`/feedback/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(updItem),
-    });
-    // console.log(updItem);
-    const data = await response.json();
+  // Update Feedback
+  const updateFeedback = (id, newFeedback) => {
     setFeedback(
-      feedback.map((item) => (item.id === id ? { item, ...data } : item))
+      feedback.map((item) =>
+        item.id === id ? { ...item, ...newFeedback } : item
+      )
     );
   };
+
+  useEffect(() => {
+    // Fetch data or any other initialization logic if needed
+    setIsLoading(false); // Set loading to false after initialization
+  }, []);
 
   return (
     <FeedbackContext.Provider
